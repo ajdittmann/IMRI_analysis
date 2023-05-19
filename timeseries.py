@@ -73,5 +73,5 @@ if __name__ == "__main__":
     labels = ['time', 'torque on secondary', 'torque on secodnary (excluding smoothing region)', 'torque on primary']
     names = ['time','torqueM2', 'torqueM2_soft', 'torqueM1']
 
-    files = glob.glob('data/*.dat')
+    files = glob.glob('TimeSeries/*.dat')
     plotdata(files, vars=vars, save=save, doOrbitAverage=doOrbitAverage, Navg=Navg, xlim=xlim, ylim=ylim)
