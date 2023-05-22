@@ -53,7 +53,7 @@ if __name__ == "__main__":
                             help="Average over some number of orbital periods.")
     parser.add_argument('-l', '--linear', action="store_true",
                             help="Plot prediction from linear theory for torque on secondary.")
-    parser.add_argument('-s', '--save', nargs='?', type=int, default=0,
+    parser.add_argument('-s', '--save', action="store_true",
                             help="Save a PDF of the plot.")
     parser.add_argument('-n', '--navg', nargs='?', type=int, default=1,
                             help="Number of orbits to average over.")
