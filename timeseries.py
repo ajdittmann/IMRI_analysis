@@ -32,7 +32,7 @@ def plotdata(files, vars=[1], save=False, doOrbitAverage=False, Navg=1, xlim=[No
     if lt and var in [1,2]:
       q = 10**-4; h=0.1; alpha=0.5
       lin = -(1.16+2.828*alpha)*(q/h)**2 	#Tanaka, Takeuchi, & Ward 2002, Eq. 68 (2D case)
-      plt.plot(np.linspace(0,300,100), lin+np.zeros(100), ls=":", color='gray')
+      plt.plot(np.linspace(0,300,100), lin+np.zeros(100), ls=":", color='gray', label='Tanaka et al. 2002')
 
     plt.xlabel('time')
     plt.ylabel(labels[var])
