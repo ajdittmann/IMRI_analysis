@@ -12,5 +12,4 @@ python timeseries.py -v 1 3 --xmin 0 --xmax 1
 ```
 will bring up plots of the torque on primary and secondary over the first orbit.
 
-
-`triplot2D.py' - A simple script that attempts to plot surface density distributions using Delaunay triangulations. 
+`triplot2D.py` - A simple script that attempts to plot surface density distributions using Delaunay triangulations. 
