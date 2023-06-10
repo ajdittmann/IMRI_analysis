@@ -65,9 +65,6 @@ def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rma
     plt.cla()
   else: plt.show()
 
-#file = 'Snapshots/masset-velasco_fargo3d_448x1562_1e-4_0.1_alpha0.1_50_orbits.dat'
-#plotdataTri(file, rexp = 0.5, rmin = 0.7, rmax = 2.5)
-
 if __name__ == "__main__":
 
     parser = ag.ArgumentParser(description="Create time series plots for IMRI code comparison.")
