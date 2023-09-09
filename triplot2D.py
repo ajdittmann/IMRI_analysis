@@ -20,7 +20,7 @@ def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rma
   vy = data[:,4]
 
   if "masset-velasco" in file:
-    #for snapshots that gave velocities in the frame of the secondary....
+    #if velocities were given in the frame of the secondary....
     vx -= y
     vy += x
 
