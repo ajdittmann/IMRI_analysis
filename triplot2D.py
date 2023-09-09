@@ -68,6 +68,7 @@ def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rma
 if __name__ == "__main__":
 
     parser = ag.ArgumentParser(description="Create time series plots for IMRI code comparison.")
+    parser.add_argument('snapshot', help="snapshot (.dat) file to plot.")
     parser.add_argument('-v', '--var', type=int, default=0,
                             help="Variable to plot.")
     parser.add_argument('-cb', '--colorbar', action="store_true",
@@ -86,6 +87,7 @@ if __name__ == "__main__":
                             help="Choose your own colormap")
 
     args = parser.parse_args()
+    file = args.snapshot
     var = args.var
     save = args.save
     log = args.log
@@ -95,6 +97,5 @@ if __name__ == "__main__":
     cmap = args.colormap
     cbar = args.colorbar
 
-    file = 'Snapshots/masset-velasco_fargo3d_448x1562_1e-4_0.1_alpha0.1_50_orbits.dat'
     plotdataTri(file, var=var, rexp=rexp, cbar=cbar, cmap=cmap, rmin=rmin, rmax=rmax, save=save, log=log)
 
