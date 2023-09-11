@@ -8,7 +8,7 @@ import matplotlib.tri as tri
 
 names = ["sigma", "vr", "vp"]
 
-def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rmax=None, save=False, log=False):
+def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rmax=None, save=False, log=False, outname=None):
   data = np.loadtxt(file)
 
   x = data[:,0]
@@ -61,7 +61,11 @@ def plotdataTri(file, var=0, rexp=None, cbar=False, cmap='magma', rmin=None, rma
   plt.ylim([-rmax,rmax])
   plt.tight_layout()
   if save:
-    plt.savefig(names[var]+'.png', dpi=400)
+    if outname is not None:
+      plt.savefig(outname, dpi = 400)
+    else:
+      plt.savefig(names[var]+'.png', dpi=400)
+
     plt.cla()
   else: plt.show()
 
@@ -85,6 +89,8 @@ if __name__ == "__main__":
                             help="Scale the plotted value by some exponent of the radius")
     parser.add_argument('-cmap', '--colormap', type=str, default='magma',
                             help="Choose your own colormap")
+    parser.add_argument('-out', '--outname', type=str, default=None,
+                            help="name to use when saving file")
 
     args = parser.parse_args()
     file = args.snapshot
@@ -95,7 +101,8 @@ if __name__ == "__main__":
     rmin = args.rmin
     rexp = args.rexp
     cmap = args.colormap
+    outname = args.outname
     cbar = args.colorbar
 
-    plotdataTri(file, var=var, rexp=rexp, cbar=cbar, cmap=cmap, rmin=rmin, rmax=rmax, save=save, log=log)
+    plotdataTri(file, var=var, rexp=rexp, cbar=cbar, cmap=cmap, rmin=rmin, rmax=rmax, save=save, log=log, outname = outname)
 
